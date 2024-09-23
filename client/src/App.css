@@ -2,20 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +14,120 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.banner{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height:5vh;
+  padding: 20px;
+  background-color: rgba(120, 66, 156, 0.904);
+}
+.banner span{
+  flex: 0 0 auto;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 75px;
+  color: #282c34;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner a {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px;
+  height: 100%; 
 }
+
+.banner img {
+  max-height: 75%; 
+  max-width: 75%; 
+}
+
+
+.flexy2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+  height: 50vh; /* Total height set to 50% of viewport */
+  background-color: rgba(0, 0, 0, 0.904);
+}
+
+.flexy2 img {
+  flex: 0 0 auto;
+  max-width: 30%; /* NICK image width */
+  height: 100%; /* Match height of flexy2 container */
+  object-fit: contain; /* Preserve aspect ratio */
+  margin-right: 20px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Match the height of NICK image */
+  flex: 0 0 30%; /* Set width of links container */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.links img {
+  flex: 1; /* Allow images to grow evenly within the container */
+  width: 100%; /* Ensure image width adjusts to container */
+  height: auto;
+  max-height: calc(33.33% - 10px); /* Adjust max-height to prevent overflow */
+  object-fit: contain; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between images */
+  box-sizing: border-box; /* Ensure padding and margin don't affect size */
+  padding: 10px;
+}
+
+.links img:last-child {
+  margin-bottom: 0;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Ensure text doesn't show until hover */
+}
+
+.image-container img {
+  display: block;
+  max-height: 100%; 
+  max-width: 30%; 
+}
+
+.hover-text {
+  position: absolute;
+  font-size: 75px;
+  top: 25%; /* Vertically center the text */
+  left: -100%; /* Start the text off-screen to the right */
+  color: white;
+  padding: 10px;
+  white-space: nowrap;
+  transition: left 0.5s ease; /* Animation effect */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.image-container:hover .hover-text {
+  left: 30%; /* Moves the text further right (off the image) on hover */
+}
+
+.AboutMe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 50vh; /* Total height set to 50% of viewport */
+  width: 50vh;
+  background-color: rgba(0, 0, 0, 0.904);
+}
+
+.AboutMe span{
+  flex: 0 0 auto;
+  border:10px solid rgb(20, 136, 165);
+  color: aliceblue;
+}
+
+

@@ -1,5 +1,5 @@
-#172.20.1.197
-#uvicorn main:app --reload --host 172.20.1.197 --port 8000
+# 172.20.1.197
+# uvicorn main:app --reload --host 172.20.1.197 --port 8000
 from fastapi import FastAPI
 import motor.motor_asyncio
 from starlette.middleware.cors import CORSMiddleware
@@ -10,18 +10,21 @@ from pydantic import BaseModel, BeforeValidator, Field, ConfigDict
 
 app = FastAPI()
 
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
-db = client.get_database('Portfolio')
-projectCollection = db.get_collection('Projects')
+client: motor.motor_asyncio.AsyncIOMotorClient = motor.motor_asyncio.AsyncIOMotorClient(
+    MONGODB_URL
+)
+db = client.get_database("Portfolio")
+projectCollection = db.get_collection("Projects")
 PyObjectId = Annotated[str, BeforeValidator(str)]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[FRONTEND_ORIGINS],
     allow_credentials=True,
-    allow_methods=['*'],
-    allow_headers=['*'],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
 
 class ProjectModel(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
@@ -35,11 +38,17 @@ class ProjectModel(BaseModel):
         arbitrary_types_allowed=True,
     )
 
+
 class ProjectCollection(BaseModel):
     projects: List[ProjectModel]
 
 
-@app.get("/projects/", response_description="List of projects", response_model=ProjectCollection,response_model_by_alias=False)
+@app.get(
+    "/projects/",
+    response_description="List of projects",
+    response_model=ProjectCollection,
+    response_model_by_alias=False,
+)
 async def list_projects():
     projects = await projectCollection.find().to_list(1000)
     return ProjectCollection(projects=projects)
