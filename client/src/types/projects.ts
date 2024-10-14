@@ -4,6 +4,8 @@ interface project {
   description: string;
   imagePath: string;
   timeFrame: string;
+  projectLink: string;
+  projectTools: string[];
 }
 
 export default project;

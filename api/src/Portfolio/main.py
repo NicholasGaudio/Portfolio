@@ -32,6 +32,8 @@ class ProjectModel(BaseModel):
     description: str = Field(...)
     imagePath: str = Field(...)
     timeFrame: str = Field(...)
+    projectLink: str = Field(...)
+    projectTools: List[str] = Field(...)
 
     model_config = ConfigDict(
         populate_by_name=True,
