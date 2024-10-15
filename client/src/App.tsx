@@ -38,7 +38,7 @@ function App() {
               <span>About Me</span>
             </div>
             <div className="text__body">
-              <span> Hi, I'm Nick! I am a second year Computer Science major at the University of Florida and I have a passion for building a asdas khasdklj hasdkljahsdkljahsdklahs kjahsdklja hsdkljahsdkljahs kljashdlk jahsdkj ahsd kjahsdl </span>
+              <span> Hi, I'm Nick! I am a second year Computer Science major at the University of Florida and I have a passion for building full-stack applications as well as games! In my free time, I enjoy playing music, working out, and developing some personal projects. Check them out below!  </span>
             </div>
           </div>
           <div className="info__links">
