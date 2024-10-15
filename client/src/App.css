@@ -251,7 +251,7 @@
 
 @media (max-width: 1075px){
   .banner span{
-    color: red;
+    /* color: red;*/
     font-size: 40px;
   }
 
@@ -378,7 +378,7 @@
 @media (max-width: 768px) {
   .banner span {
     font-size: 30px; /*Tablets */
-    color: orange;
+    /* color: orange;*/
   }
 
   .project__image{
@@ -407,11 +407,12 @@
     align-items: center; 
   }
 
+
 }
 
 @media (max-width: 480px) { /* Mobile */
   .banner span {
     font-size: 20px; 
-    color: yellow;
+    /* color: yellow; */
   }
 }
