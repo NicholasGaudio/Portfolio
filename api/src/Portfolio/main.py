@@ -1,5 +1,3 @@
-# 172.20.1.197
-# uvicorn main:app --reload --host 172.20.1.197 --port 8000
 from fastapi import FastAPI
 import motor.motor_asyncio
 from starlette.middleware.cors import CORSMiddleware
@@ -58,4 +56,4 @@ async def list_projects():
 
 @app.get("/")
 async def root():
-    return {"Hello World"}
+    return {"Hello Nicholas"}
