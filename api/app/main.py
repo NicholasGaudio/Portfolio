@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import motor.motor_asyncio
 from starlette.middleware.cors import CORSMiddleware
-from api.app.env import MONGODB_URL, FRONTEND_ORIGINS
+from api.env import MONGODB_URL, FRONTEND_ORIGINS
 from typing import Annotated, Optional, List
 from pydantic import BaseModel, BeforeValidator, Field, ConfigDict
 
